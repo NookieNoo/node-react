@@ -16,7 +16,6 @@ router.post(
     async (req, res) => {
         try {
             const errors = validationResult(req);
-
             if (!errors.isEmpty()) {
                 return res.status(400).json({
                     errors: errors.array(),
@@ -35,7 +34,7 @@ router.post(
             const hashedPassword = await bcrypt.hash(password, 12);
             const user = new User({ email, password: hashedPassword });
 
-            await User.save();
+            await user.save();
             res.status(201).json({ message: 'Пользователь создан' });
         } catch (err) {
             res.status(500).json({
