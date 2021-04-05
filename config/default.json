@@ -1,5 +1,5 @@
 {
-    "port": 5000,
+    "port": 5001,
     "jwtSecret": "ilya first node project",
     "mongoUri": "mongodb://localhost:27017/nodereactdb"
 }
